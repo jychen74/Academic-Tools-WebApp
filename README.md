@@ -18,17 +18,6 @@
 3. **執行面 (Execution)：** OKR 研究目標管理與艾森豪重要/緊急任務矩陣 (Eisenhower Matrix)
 4. **管理面 (Management)：** Risk Matrix 風險評估矩陣、Decision Log 重要決策日誌與 Retrospective 專案學習回顧
 
-
-## 📸 系統介面預覽 (UI Preview)
-
-<div style="display: flex; overflow-x: auto; gap: 12px; padding-bottom: 8px;">
-  <img src="./figs/ui.webp" alt="科研畫布網頁介面 1" style="max-height: 400px; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); flex-shrink: 0;">
-  <img src="./figs/ui-4.webp" alt="科研畫布網頁介面 2" style="max-height: 400px; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); flex-shrink: 0;">
-</div>
-
-
-
-
 ## 📸 系統介面預覽 (UI Preview)
 
 <table border="0" cellpadding="0" cellspacing="0">
