@@ -26,6 +26,24 @@
   <img src="./figs/image_d1d9be.png" alt="科研畫布網頁介面 2" style="max-height: 400px; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); flex-shrink: 0;">
 </div>
 
+
+
+|                       🖥️ 滿版 Web App 精美戰略畫布                       |                       📊 隱形資料庫（隨副本自動部署）                       |
+| :-------------------------------------------------------------------------: | :-------------------------------------------------------------------------: |
+| **`<img src="./figs/ui.webp" width="600" alt="科研畫布網頁介面">`** | **`<img src="./figs/ui-4.webp" width="600" alt="試算表後端管理">`** |
+
+
+## 📸 系統介面預覽 (UI Preview)
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><img src="./figs/ui-1.webp" width="600" style="max-width:none;" alt="Web App 介面"></td>
+    <td style="padding-left: 12px;"><img src="./figs/ui-2.webp" width="600" style="max-width:none;" alt="試算表工具列"></td>
+  </tr>
+</table>
+
+*💡 提示：如果您的螢幕寬度較小，可以透過滑鼠中鍵、觸控板或按住 Shift 鍵滾動輪來橫向滑動檢視完整截圖。*
+
 *💡 提示：如果您的螢幕寬度較小，可以透過滑鼠中鍵、觸控板或按住 Shift 鍵滾動輪來橫向滑動檢視完整截圖。*
 
 
