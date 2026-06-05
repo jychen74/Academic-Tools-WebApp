@@ -26,9 +26,6 @@
   <img src="./figs/ui-4.webp" alt="科研畫布網頁介面 2" style="max-height: 400px; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); flex-shrink: 0;">
 </div>
 
-*💡 提示：如果您的螢幕寬度較小，可以透過滑鼠中鍵、觸控板或按住 Shift 鍵滾動輪來橫向滑動檢視完整截圖。*
-
-
 ---
 
 ## 💡 核心優勢 (Key Features)
