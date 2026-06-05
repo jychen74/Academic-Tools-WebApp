@@ -7,8 +7,12 @@
     <style>
         :root {
             --primary: #007bff;
-            --bg: #f4f4f9;
-            --text: #333;
+            --success: #28a745;
+            /* 💡 日式暖色系調校 */
+            --bg: #f5f2eb;          /* 溫潤的和紙暖灰底色 */
+            --container-bg: #fdfaf2;/* 鳥之子色 (極柔和的象牙暖白) */
+            --text: #3c3a35;        /* 帶一點點暖調的深灰，比純黑更優雅柔和 */
+            --dark-blue: #2c3e50;
         }
         body {
             font-family: "微軟正黑體", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -19,43 +23,75 @@
             padding: 0;
         }
         .container {
-            max-width: 800px;
+            max-width: 850px;
             margin: 40px auto;
-            background: #fff;
+            background: var(--container-bg);
             padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px rgba(165,155,135,0.15); /* 柔和的暖色調陰影 */
         }
-        h1 { color: #2c3e50; border-bottom: 3px solid var(--primary); padding-bottom: 10px; margin-top: 0;}
-        h2 { color: #34495e; margin-top: 40px; border-left: 5px solid var(--primary); padding-left: 10px;}
-        h3 { color: #007bff; }
+        h1 { color: var(--dark-blue); border-bottom: 3px solid var(--primary); padding-bottom: 10px; margin-top: 0; font-size: 2em; }
+        h2 { color: #34495e; margin-top: 40px; border-left: 5px solid var(--primary); padding-left: 12px; font-size: 1.5em;}
+        h3 { color: var(--primary); margin-top: 0; }
+        
+        .badge-container { margin-top: 15px; margin-bottom: 25px; }
         .badge {
             display: inline-block;
-            background: #e9ecef;
-            padding: 6px 12px;
+            background: #eebd9e20; /* 帶微暖調的標籤底色 */
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 0.9em;
+            font-size: 0.88em;
             font-weight: bold;
-            color: #495057;
-            margin-right: 5px;
+            color: #5c554a;
+            margin-right: 6px;
             margin-bottom: 10px;
+            border: 1px solid #e2dacf;
         }
+        
+        /* 核心模組外框 */
         .feature-box {
             background: #e3f2fd;
-            border-left: 5px solid #007bff;
-            padding: 15px 20px;
-            margin: 20px 0;
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            margin: 25px 0;
             border-radius: 0 8px 8px 0;
         }
-        .feature-box ul { margin: 10px 0 0 0; padding-left: 20px; color: #2c3e50; }
+        .feature-box strong { font-size: 1.1em; color: var(--dark-blue); }
+        .feature-box ul { margin: 12px 0 0 0; padding-left: 20px; }
+        .feature-box li { margin-bottom: 8px; color: #2c3e50; }
+
+        /* 核心優勢列表排版 */
+        .key-features-list { list-style: none; padding-left: 0; }
+        .key-features-list > li { position: relative; padding-left: 0; margin-bottom: 20px; }
+        .key-features-list strong { color: var(--dark-blue); font-size: 1.05em; }
+
+        /* 部署步驟外框 */
         .step-box {
-            background: #f8f9fa;
-            border: 1px solid #e9ecef;
-            padding: 20px;
+            background: #fbf9f3; /* 步驟框搭配微幅低飽和暖色 */
+            border: 1px solid #e6dfd3;
+            padding: 25px;
             margin: 20px 0;
             border-radius: 8px;
         }
-        .step-box h3 { margin-top: 0; color: #2c3e50;}
+        .step-box h3 { color: var(--dark-blue); border-bottom: 1px solid #e6dfd3; padding-bottom: 8px; }
+        
+        /* 響應式 SVG 容器 */
+        .svg-flowchart-container {
+            width: 100%;
+            margin: 20px 0;
+            background: var(--container-bg);
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px dashed #dcd4c4;
+            box-sizing: border-box;
+        }
+        .svg-flowchart-container svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* 按鈕樣式 */
         .btn {
             display: inline-block;
             background: var(--primary);
@@ -64,142 +100,210 @@
             padding: 12px 24px;
             border-radius: 8px;
             font-weight: bold;
-            transition: background 0.3s;
-            box-shadow: 0 2px 4px rgba(0,123,255,0.3);
+            transition: background 0.3s, transform 0.1s;
+            box-shadow: 0 3px 6px rgba(0,123,255,0.25);
         }
-        .btn:hover { background: #0056b3; }
+        .btn:hover { background: #0056b3; transform: translateY(-1px); }
+        .btn:active { transform: translateY(0); }
+        
         .sponsor-btn {
             background: #FFDD00;
             color: #333;
             border: 1px solid #f6c800;
-            box-shadow: 0 2px 4px rgba(246,200,0,0.3);
+            box-shadow: 0 3px 6px rgba(246,200,0,0.2);
         }
         .sponsor-btn:hover { background: #e6c800; }
+        
         .disclaimer {
-            font-size: 0.85em;
-            color: #666;
-            border-top: 1px solid #eee;
+            font-size: 0.88em;
+            color: #7c7566;
+            border-top: 1px solid #e6dfd3;
             padding-top: 20px;
             margin-top: 40px;
         }
+        .disclaimer ul { padding-left: 20px; margin-top: 8px; }
+        .disclaimer li { margin-bottom: 6px; }
+        
         code {
-            background: #f1f1f1;
+            background: #f2ebd9;
             padding: 3px 6px;
             border-radius: 4px;
-            color: #d63384;
+            color: #b8276e;
             font-family: Consolas, monospace;
+            font-size: 0.9em;
         }
-        ul, ol { padding-left: 20px; }
+        ul, ol { padding-left: 25px; }
         li { margin-bottom: 10px; }
-        .tutorial-img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-            margin: 15px 0 25px 0;
-            border: 1px solid #ddd;
-            display: block; 
+        
+        blockquote {
+            margin: 15px 0;
+            padding: 12px 18px;
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            color: #856404;
+            border-radius: 0 4px 4px 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>實驗室營運工具箱 <br>
-            <span style="font-size: 0.55em; color: #666; font-weight: normal;">Lab Operations Toolbox (Academic Canvas Web App)</span>
+        <h1>🔬 實驗室營運工具箱 <br>
+            <span style="font-size: 0.55em; color: #7c7566; font-weight: normal;">Lab Operations Toolbox (輕量級學術策略與實驗設計畫布 Web App)</span>
         </h1>
-        <p>這是一個利用 <strong>Google Sheets</strong> 作為隱形資料庫、透過 <strong>Google Apps Script (GAS)</strong> 部署的輕量級網頁應用程式。專為需要頻繁調整專案策略、設計實驗架構、管理核心設施或實驗室營運的研究人員所設計。</p>
+        <p>這是一個利用 <strong>Google Sheets</strong> 作為隱形資料庫、透過 <strong>Google Apps Script (GAS)</strong> 部署的滿版網頁應用程式。專為需要頻繁調整專案策略、設計實驗架構、管理核心設施或實驗室營運的研究人員所設計。</p>
+        <p>系統底層核心算法與網頁結構已由開發者託管於中央大腦中，使用者端僅需引入乾鏡的開源「空殼 Proxy 橋樑」，即可在個人雲端硬碟中安全、獨立地跑起完全滿版的精美策略畫布，兼具<strong>極致安全</strong>與<strong>一鍵無縫升級</strong>的優勢。</p>
         
         <div class="feature-box">
             <strong>🌟 系統包含四大核心管理模組：</strong>
             <ul>
-                <li><strong>策略面 (Strategic)：</strong> 商業模式畫布 (BMC) 與 SWOT 分析</li>
+                <li><strong>策略面 (Strategic)：</strong> 商業模式畫布 (Business Model Canvas, BMC) 與 SWOT 分析</li>
                 <li><strong>實驗面 (Experiment)：</strong> 實驗設計畫布 (Experiment Design Canvas, EDC)</li>
-                <li><strong>執行面 (Execution)：</strong> OKR 目標管理與艾森豪任務排程</li>
-                <li><strong>管理面 (Management)：</strong> 決策日誌、風險矩陣與專案回顧</li>
+                <li><strong>執行面 (Execution)：</strong> OKR 研究目標管理與艾森豪重要/緊急任務矩陣 (Eisenhower Matrix)</li>
+                <li><strong>管理面 (Management)：</strong> Risk Matrix 風險評估矩陣、Decision Log 重要決策日誌與 Retrospective 專案學習回顧</li>
             </ul>
         </div>
 
-        <div style="margin-top: 15px;">
-            <span class="badge">✅ 免架設伺服器</span>
-            <span class="badge">✅ AI 擴充友善</span>
-            <span class="badge">✅ 直覺編輯與自動存檔</span>
-            <span class="badge">✅ 完全自訂標題</span>
-            <span class="badge">✅ Quarto 友善匯出 (.qmd)</span>
+        <div class="badge-container">
+            <span class="badge">🛡️ 智財機密 100% 自主</span>
+            <span class="badge">🖥️ 滿版獨立網頁體驗</span>
+            <span class="badge">⚡ 極速秒開與背景存檔</span>
+            <span class="badge">🤖 AI 擴充功能友善</span>
+            <span class="badge">🎨 完全自訂標題欄位</span>
+            <span class="badge">📄 科研友善雲端匯出</span>
         </div>
 
-        <h2>🚀 圖文並茂部署教學 (1 分鐘完成，保證成功)</h2>
+        <h2>💡 核心優勢 (Key Features)</h2>
+        <ul class="key-features-list">
+            <li>
+                <strong>🛡️ 智財權與機密 100% 自主管理</strong><br>
+                免架設伺服器！採用你個人的 Google Sheets 當作隱形資料庫，所有研究計畫與機密策略 100% 存在你個人的 Google Drive 中。
+            </li>
+            <li>
+                <strong>🖥️ 滿版獨立網頁體驗</strong><br>
+                揮別擠在試算表側邊欄或小視窗的侷限，部署後擁有專屬的滿版網頁儀表板，給你的實驗設計應有的視覺尊重。
+            </li>
+            <li>
+                <strong>⚡ 極速非同步自動存檔與秒開體驗</strong><br>
+                採用全新升級的核心映射算法，網頁啟動時會精準過濾試算表中的空白區域，<strong>即使資料庫尚未瘦身也能達到毫秒級的「秒開」加載速度。</strong> 像貼便利貼一樣，在網頁區塊直接打字、滑鼠游標移開立即觸發背景精準定位同步，完全不影響打字流暢度，更不怕資料遺失。
+            </li>
+            <li>
+                <strong>🤖 AI 擴充功能友善</strong><br>
+                網頁原生內容區塊 (<code>contenteditable</code>) 能完美銜接瀏覽器上的 AI 擴充功能（如 Claude、ChatGPT 等），直接喚出 AI 幫忙潤飾計畫，一起腦力激盪。
+            </li>
+            <li>
+                <strong>🎨 完全自訂標題欄位</strong><br>
+                支援從試算表直接更改所有九宮格與矩陣的中英文字段，無痛打造你專屬的學術戰略畫布。
+            </li>
+            <li>
+                <strong>📄 科研友善雲端匯出</strong><br>
+                網頁端一鍵產生 Quarto (<code>.qmd</code>) 簡報原始碼或 PNG 圖檔，並全自動備份至你的雲端硬碟根目錄或利用 Gmail 自動寄給自己，無縫貼進計畫書草稿！
+            </li>
+        </ul>
+
+        <h2>🚀 部署教學 (3 步驟，30 秒極速完工)</h2>
+        <p style="color: #555;">受惠於 Google Sheets 副本機制，資料庫 Library 設定會隨檔案一併完整複製，您無需手動設定任何程式碼！</p>
         
         <div class="step-box">
-            <h3>步驟一：建立資料庫與程式碼 (一鍵複製)</h3>
-            <p>點擊下方按鈕，將內建程式碼的資料庫範本複製到你的 Google 雲端硬碟 (全程免費)：</p>
-            <a href="https://docs.google.com/spreadsheets/d/1ZLwbtcXO2Koy5OcWiN7oZbaF0rReSUskVKp73Zv-StE/copy" target="_blank" class="btn">📥 一鍵複製 Google Sheet 專屬範本</a>
-            <img src="figs/clone_sheet.webp" style="width: 80%; border-radius: 8px; margin-top: 15px;">
-            <p style="font-size: 0.9em; margin-top: 15px; color: #555;">💡 複製完成後，你可以隨意修改下方四個分頁 (<code>Strategic</code>, <code>Experiment</code>, <code>Execution</code>, <code>Management</code>) 中 <strong>C 欄 (Title)</strong> 的標題文字，打造你專屬的畫布欄位。</p>
-            <p style="font-size: 0.9em; margin-top: 5px; color: #d73a49; font-weight: bold;">⚠️ 請勿直接在試算表的 B 欄 (Content) 打字，我們等步驟二發佈後，直接透過精美的網頁介面來填寫！</p>
-            <img src="figs/gsheet.webp" style="width: 80%; border-radius: 8px; margin-top: 15px;">
+            <h3>步驟一：一鍵複製母範本 (內建完成所有配置)</h3>
+            <p>點擊下方按鈕，並點選 <strong>「建立副本」</strong>，將系統下載到你個人的 Google 雲端硬碟：</p>
+            <p><a href="https://docs.google.com/spreadsheets/d/1xOC0zmpLPJvnkBsGuf_mCBbY91rk310ckK9fP85g7BY/copy" target="_blank" class="btn">📥 一鍵建立 Google Sheet 專屬範本副本</a></p>
         </div>
 
         <div class="step-box">
-            <h3>步驟二：發布網頁應用程式 (完整圖文教學)</h3>
+            <h3>步驟二：一鍵自動生成系統結構</h3>
             <ol>
-                <li>在複製好的試算表上方選單，點擊 <strong>「擴充功能」 > 「Apps Script」</strong>。你會看到程式碼已經由範本自動為你準備好了！<br>  
-                <img src="figs/gas.webp" alt="Apps Script 編輯器" class="tutorial-img" style="width: 50%;"></li>
-                
-                <li>請點擊右上角藍色的 <strong>「部署」 > 「新增部署作業」</strong>。<br>
-                <img src="figs/gas-deploy-1.webp" alt="新增部署作業" class="tutorial-img" style="width: 30%;"></li>
-                
-                <li>點擊左上角的齒輪圖示，選取 <strong>「網頁應用程式」</strong>，並簡單寫個記錄。<br>
-                <img src="figs/gas-deploy-2.webp" alt="選擇網頁應用程式" class="tutorial-img" style="width: 50%;"></li>
-                
-                <li>將 <strong>執行身分</strong> 設為「我」，<strong>誰可以存取</strong> 設為「只有我自己」(這樣才能保護你的資料隱私)，然後點擊 <strong>「部署」</strong>。<br>
-                <img src="figs/deploy-2.webp" alt="部署權限設定" class="tutorial-img" style="width: 50%;"></li>
-                
-                <li><strong>【首次授權教學】</strong>系統會要求授權，請點擊 <strong>「授予存取權」</strong>。<br>
-                <img src="figs/deploy-3.webp" alt="授予存取權" class="tutorial-img" style="width: 50%;"></li>
-                
-                <li>若出現紅色的安全警告，請不用擔心（因為這是你自己部署給自己用的程式碼）。點擊左下角的 <strong>「Advanced (進階)」</strong>。<br>
-                <img src="figs/deploy-4.webp" alt="安全警告處理 - 進階" class="tutorial-img" style="width: 50%;"></li>
-                
-                <li>接著點擊最下方的 <strong>「Go to [專案名稱] (unsafe)」</strong> 繼續。<br>
-                <img src="figs/deploy-5.webp" alt="前往專案" class="tutorial-img" style="width: 50%;"></li>
-                
-                <li>勾選「Select all」允許存取權限，然後點擊 <strong>「Continue (繼續)」</strong>。<br>
-                <img src="figs/deploy-6.webp" alt="允許存取權限" class="tutorial-img" style="width: 50%;"></li>
-                
-                <li>🎉 恭喜！看到這個畫面代表部署成功，請複製下方產生的網址，這就是你專屬的策略畫布連結！<br>
-                <img src="figs/deploy-7.webp" alt="部署成功網址" class="tutorial-img" style="width: 50%;"></li>
+                <li>打開你剛剛複製出來的那張 Google 試算表網頁，並<strong>重新整理網頁 (F5)</strong>。</li>
+                <li>稍等 2~3 秒，上方工具列會全自動多出一個 <strong><code>🔬 科研畫布工具</code></strong> 選單。</li>
+                <li>點選 <strong><code>🚀 1. 一鍵初始化系統結構</code></strong>。</li>
+                <li>依據 Google 提示完成第一次執行的帳號安全授權。<em>(基本安全授權完成後，請「再點擊一次」該按鈕)</em>。</li>
+                <li>試算表就會全自動幫你長出 <code>Strategic</code>、<code>Experiment</code>、<code>Execution</code>、<code>Management</code> 四個分頁與完整的底層 ID 結構。</li>
+            </ol>
+            <blockquote>
+                <strong>⚠️ 重要提醒：</strong><br>
+                外殼初始化完成後，您可以隨意修改各分頁中 <strong>C 欄 (Title)</strong> 的標題文字，打造您專屬的畫布欄位。但<strong>請勿直接在試算表的 B 欄 (Content) 打字</strong>，我們等步驟三發佈後，直接透過滿版網頁介面填寫，系統會自動在背景精準儲存！
+            </blockquote>
+        </div>
 
-                <li>接下來，就可以直接點擊連結，在 Web App 上流暢地進行實驗室營運規劃囉！<br> 
-                <img src="figs/web-app.webp" alt="Web App 介面" class="tutorial-img" style="width: 120%;"></li>
+        <div class="svg-flowchart-container">
+            <svg viewBox="0 0 800 130" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                        <path d="M 0 1.5 L 7.5 5 L 0 8.5 z" fill="#007bff"/>
+                    </marker>
+                    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#007bff" />
+                        <stop offset="100%" stop-color="#0056b3" />
+                    </linearGradient>
+                </defs>
+                
+                <rect x="10" y="20" width="160" height="70" rx="6" fill="url(#blueGrad)" />
+                <text x="90" y="48" fill="white" font-size="14" font-weight="bold" text-anchor="middle">1. 開啟編輯器</text>
+                <text x="90" y="70" fill="#e3f2fd" font-size="11" text-anchor="middle">擴充功能 &gt; Apps Script</text>
+                
+                <line x1="170" y1="55" x2="214" y2="55" stroke="#007bff" stroke-width="2.5" marker-end="url(#arrow)" />
+                
+                <rect x="220" y="20" width="160" height="70" rx="6" fill="#fdfaf2" stroke="#007bff" stroke-width="2" />
+                <text x="300" y="48" fill="#2c3e50" font-size="14" font-weight="bold" text-anchor="middle">2. 新增部署作業</text>
+                <text x="300" y="70" fill="#6c6558" font-size="11" text-anchor="middle">藍色按鈕 ➜ 網頁應用程式</text>
+                
+                <line x1="380" y1="55" x2="424" y2="55" stroke="#007bff" stroke-width="2.5" marker-end="url(#arrow)" />
+                
+                <rect x="430" y="20" width="160" height="70" rx="6" fill="#fdfaf2" stroke="#ffc107" stroke-width="2" />
+                <text x="510" y="48" fill="#2c3e50" font-size="14" font-weight="bold" text-anchor="middle">3. 關鍵權限參數</text>
+                <text x="510" y="66" fill="#856404" font-size="10" font-weight="bold" text-anchor="middle">身分：存取網頁的使用者</text>
+                <text x="510" y="79" fill="#856404" font-size="10" font-weight="bold" text-anchor="middle">存取：任何人 (Anyone)</text>
+                
+                <line x1="590" y1="55" x2="634" y2="55" stroke="#007bff" stroke-width="2.5" marker-end="url(#arrow)" />
+                
+                <rect x="640" y="20" width="150" height="70" rx="6" fill="#28a745" />
+                <text x="715" y="48" fill="white" font-size="14" font-weight="bold" text-anchor="middle">4. 獲取專屬 URL</text>
+                <text x="715" y="70" fill="#d4edda" font-size="11" text-anchor="middle">一秒點開 ➜ 滿版畫布</text>
+            </svg>
+        </div>
+
+        <div class="step-box">
+            <h3>步驟三：發布你個人的獨立滿版網頁 App</h3>
+            <ol>
+                <li>點選試算表上方選單的 <strong>「擴充功能」 &gt; 「Apps Script」</strong>。</li>
+                <li>進入編輯器後，直接點擊右上方藍色的 <strong>「部署」 &gt; 「新增部署作業」</strong>。</li>
+                <li>點擊左上角齒輪圖示，選取 <strong>「網頁應用程式 (Web app)」</strong>。</li>
+                <li>調整關鍵安全權限參數：
+                    <ul>
+                        <li><strong>執行身分 (Execute as)</strong>：務必選取 <strong>「存取網頁的使用者 (User accessing the web app)」</strong> <em>(這能確保系統在備份檔案與寄信時，使用的是你自己的 Google 雲端配額，完全保護你的資料隱私)</em>。</li>
+                        <li><strong>誰可以存取 (Who has access)</strong>：選取 <strong>「任何人 (Anyone)」</strong>。</li>
+                    </ul>
+                </li>
+                <li>點擊 <strong>「部署」</strong> 並通過首次安全授權。<em>(若出現安全警告，點選左下角「Advanced (進階)」➜「Go to [專案名稱] (unsafe)」➜「允許」即可)</em>。</li>
+                <li><strong>發布成功！</strong> 系統會產生一段專屬你的 <strong>網頁應用程式 URL</strong>。點開該網址，即可開始在完全滿版的精美畫面中規劃你的科研大局！</li>
             </ol>
         </div>
 
-        <div class="step-box" style="border-color: #ffeeba; background-color: #fff8e1;">
-            <h3 style="color: #b08d00;">⚡ 進階技巧：一鍵為資料庫瘦身加速</h3>
-            <p>為了讓網頁載入與存檔達到「秒開」等級，建議清除試算表中多餘的空白列：</p>
+        <div class="step-box" style="border-color: #bee5eb; background-color: #e2f0d9;">
+            <h3 style="color: #28a745;">⚡ 進階技巧：一鍵進行資料庫防禦型瘦身</h3>
+            <p>受惠於系統全新升級的「精準單點定位讀寫機制」，即使試算表底部帶有幾萬行幽靈空白列，網頁 Web App 依然能維持極速秒開的順暢體驗。但為了讓 Google Sheets 後端儲存格的記憶體利用率達到最完美的精簡狀態（極致強迫症友善），建議可在大量修改資料後進行一次防禦型瘦身：</p>
             <ol style="margin-bottom: 0;">
-                <li>在 Apps Script 編輯器上方工具列，找到下拉式選單，選擇 <code>trimEmptyRows</code>。</li>
-                <li>點擊旁邊的<strong>「執行 (▶)」</strong>。</li>
-                <li>程式會自動幫你把所有分頁底部用不到的數百行空白列刪除，讓系統運作飛快！</li>
+                <li>打開你的試算表。</li>
+                <li>點選上方工具列的 <strong><code>🔬 科研畫布工具</code> &gt; <code>🧹 2. 試算表自動瘦身</code></strong>。</li>
+                <li>程式會自動觸發遠端大腦的核心優化算法，將所有分頁底部用不到的數百行空白列全數清除，讓系統運作飛快！</li>
             </ol>
         </div>
 
-        <h2>❤️ 支持這個專案</h2>
-        <p>如果這個畫布工具幫助你釐清了實驗室的營運方向，或節省了你整理計畫書的時間，歡迎透過以下方式支持我的持續開發與研究：</p>
+        <h2>❤️ 支持這個專案 (How to Support This Project)</h2>
+        <p>如果這個畫布工具幫助你釐清了實驗室的營運方向，或節省了你整理計畫書提示的時間，歡迎透過以下方式支持我的持續開發與研究：</p>
 
         <h3>☕ 1. 贊助支持 (Sponsor This Project)</h3>
         <p>開發與維護開源工具需要投入許多業餘時間。如果你覺得工具好用，歡迎給我一點鼓勵！</p>
-        <a href="https://ko-fi.com/jingyuanchen" target="_blank" class="btn sponsor-btn">☕ 贊助開發者 (Ko-fi)</a>
+        <p><a href="https://ko-fi.com/jingyuanchen" target="_blank" class="btn sponsor-btn">☕ 贊助開發者 (Ko-fi)</a></p>
 
         <h3>📄 2. 學術交流 (Academic Connection)</h3>
-        <p>身為生醫研究人員，若你在研究或設施管理中使用了本工具，或對單細胞轉錄體 (scRNA-seq)、Nanopore 定序有興趣，歡迎一起討論與交流。</p>
+        <p>身為生醫研究人員與病理獸醫師，若你在研究、核心設施管理中使用了本工具，或對單細胞轉錄體定序 (scRNA-seq)、空間轉錄組學 (Spatial Transcriptomics)、ONT Nanopore 定序與病原監測技術有興趣，歡迎參考或隨時與我進行學術討論與交流。</p>
 
         <div class="disclaimer">
-            <strong>⚠️ 免責聲明 (Disclaimer)</strong><br>
+            <strong>⚠️ 免責聲明 (Disclaimer)</strong>
             <ul>
-                <li>本專案為開發者基於個人興趣於非工作時間所開發之開源輔助工具，<strong>與所屬之研究機構或任職單位無關</strong>。</li>
+                <li>本專案為開發者基於個人興趣於非工作時間所開發之開源輔助工具，與所屬之研究機構或任職單位無關。</li>
                 <li>專案採「現狀 (as-is)」提供，開發者與所屬機構不承擔系統維護、資料保管或任何直接/間接損害之背書與賠償責任。</li>
-                <li>使用者應自行妥善保管其匯出之資料與策略機密。</li>
+                <li>使用者應自行妥善保管機密策略與資料。</li>
             </ul>    
         </div>
     </div>
