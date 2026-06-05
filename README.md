@@ -22,8 +22,8 @@
 ## 📸 系統介面預覽 (UI Preview)
 
 <div style="display: flex; overflow-x: auto; gap: 12px; padding-bottom: 8px;">
-  <img src="./figs/image_d1e04a.png" alt="科研畫布網頁介面 1" style="max-height: 400px; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); flex-shrink: 0;">
-  <img src="./figs/image_d1d9be.png" alt="科研畫布網頁介面 2" style="max-height: 400px; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); flex-shrink: 0;">
+  <img src="https://github.com/jychen74/Academic-Tools-WebApp/blob/main/figs/ui.webp" alt="科研畫布網頁介面 1" style="max-height: 400px; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); flex-shrink: 0;">
+  <img src="https://github.com/jychen74/Academic-Tools-WebApp/blob/main/figs/ui-4.webp" alt="科研畫布網頁介面 2" style="max-height: 400px; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); flex-shrink: 0;">
 </div>
 
 
