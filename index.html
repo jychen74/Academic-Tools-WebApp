@@ -8,10 +8,10 @@
         :root {
             --primary: #007bff;
             --success: #28a745;
-            /* 💡 日式暖色系調校 */
+            /* 💡 日式暖色系 */
             --bg: #f5f2eb;          /* 溫潤的和紙暖灰底色 */
             --container-bg: #fdfaf2;/* 鳥之子色 (極柔和的象牙暖白) */
-            --text: #3c3a35;        /* 帶一點點暖調的深灰，比純黑更優雅柔和 */
+            --text: #3c3a35;        /* 帶暖調的深灰，比純黑更優雅柔和 */
             --dark-blue: #2c3e50;
         }
         body {
@@ -59,6 +59,38 @@
         .feature-box strong { font-size: 1.1em; color: var(--dark-blue); }
         .feature-box ul { margin: 12px 0 0 0; padding-left: 20px; }
         .feature-box li { margin-bottom: 8px; color: #2c3e50; }
+
+        /* 💡 系統介面預覽卡片排版 (極簡無邊框卡片設計) */
+        .ui-preview-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 25px 0;
+        }
+        .ui-card {
+            background: #ffffff;
+            border: 1px solid #e6dfd3;
+            border-radius: 8px;
+            padding: 6px;
+            box-shadow: 0 4px 10px rgba(165,155,135,0.08);
+            overflow: hidden;
+        }
+        .ui-card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        .ui-caption {
+            font-size: 0.85em;
+            color: #7c7566;
+            margin-top: 12px;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            .ui-preview-container { grid-template-columns: 1fr; }
+        }
 
         /* 核心優勢列表排版 */
         .key-features-list { list-style: none; padding-left: 0; }
@@ -151,7 +183,7 @@
             <span style="font-size: 0.55em; color: #7c7566; font-weight: normal;">Lab Operations Toolbox (輕量級學術策略與實驗設計畫布 Web App)</span>
         </h1>
         <p>這是一個利用 <strong>Google Sheets</strong> 作為隱形資料庫、透過 <strong>Google Apps Script (GAS)</strong> 部署的滿版網頁應用程式。專為需要頻繁調整專案策略、設計實驗架構、管理核心設施或實驗室營運的研究人員所設計。</p>
-        <p>系統底層核心算法與網頁結構已由開發者託管於中央大腦中，使用者端僅需引入乾鏡的開源「空殼 Proxy 橋樑」，即可在個人雲端硬碟中安全、獨立地跑起完全滿版的精美策略畫布，兼具<strong>極致安全</strong>與<strong>一鍵無縫升級</strong>的優勢。</p>
+        <p>系統底層核心算法與網頁結構已由開發者託管於中央大腦中，使用者端僅需引入乾淨的開源「空殼 Proxy 橋樑」，即可在個人雲端硬碟中安全、獨立地跑起完全滿版 的精美策略畫布，兼具<strong>極致安全</strong>與<strong>一鍵無縫升級</strong>的優勢。</p>
         
         <div class="feature-box">
             <strong>🌟 系統包含四大核心管理模組：</strong>
@@ -162,6 +194,16 @@
                 <li><strong>管理面 (Management)：</strong> Risk Matrix 風險評估矩陣、Decision Log 重要決策日誌與 Retrospective 專案學習回顧</li>
             </ul>
         </div>
+
+        <div class="ui-preview-container">
+            <div class="ui-card">
+                <img src="./figs/ui.webp" alt="科研畫布網頁介面 1">
+            </div>
+            <div class="ui-card">
+                <img src="./figs/ui-4.webp" alt="科研畫布網頁介面 2">
+            </div>
+        </div>
+        <div class="ui-caption">💡 提示：部署完成後，您將擁有與上方相同的專屬滿版網頁儀表板，支援即時自動同步。</div>
 
         <div class="badge-container">
             <span class="badge">🛡️ 智財機密 100% 自主</span>
@@ -273,7 +315,7 @@
                         <li><strong>誰可以存取 (Who has access)</strong>：選取 <strong>「任何人 (Anyone)」</strong>。</li>
                     </ul>
                 </li>
-                <li>點擊 <strong>「部署」</strong> 並通過首次安全授權。<em>(若出現安全警告，點選左下角「Advanced (進階)」➜「Go to [專案名稱] (unsafe)」➜「允許」即可)</em>。</li>
+                <li>點擊 <strong>「部署」</strong> 並通過首次安全授權。<em>(若出現安全警告，點選左下角「Advanced (進階)」➜「Go to [專案名稱] (unsafe)」➜「允許 transition」即可)</em>。</li>
                 <li><strong>發布成功！</strong> 系統會產生一段專屬你的 <strong>網頁應用程式 URL</strong>。點開該網址，即可開始在完全滿版的精美畫面中規劃你的科研大局！</li>
             </ol>
         </div>
@@ -289,7 +331,7 @@
         </div>
 
         <h2>❤️ 支持這個專案 (How to Support This Project)</h2>
-        <p>如果這個畫布工具幫助你釐清了實驗室的營運方向，或節省了你整理計畫書提示的時間，歡迎透過以下方式支持我的持續開發與研究：</p>
+        <p>如果這個畫布工具幫助你釐清了實驗室的營運方向，或節省了你整理計畫書的時間，歡迎透過以下方式支持我的持續開發與研究：</p>
 
         <h3>☕ 1. 贊助支持 (Sponsor This Project)</h3>
         <p>開發與維護開源工具需要投入許多業餘時間。如果你覺得工具好用，歡迎給我一點鼓勵！</p>
