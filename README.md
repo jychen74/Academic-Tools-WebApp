@@ -18,6 +18,17 @@
 3. **執行面 (Execution)：** OKR 研究目標管理與艾森豪重要/緊急任務矩陣 (Eisenhower Matrix)
 4. **管理面 (Management)：** Risk Matrix 風險評估矩陣、Decision Log 重要決策日誌與 Retrospective 專案學習回顧
 
+
+## 📸 系統介面預覽 (UI Preview)
+
+<div style="display: flex; overflow-x: auto; gap: 12px; padding-bottom: 8px;">
+  <img src="./figs/image_d1e04a.png" alt="科研畫布網頁介面 1" style="max-height: 400px; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); flex-shrink: 0;">
+  <img src="./figs/image_d1d9be.png" alt="科研畫布網頁介面 2" style="max-height: 400px; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); flex-shrink: 0;">
+</div>
+
+*💡 提示：如果您的螢幕寬度較小，可以透過滑鼠中鍵、觸控板或按住 Shift 鍵滾動輪來橫向滑動檢視完整截圖。*
+
+
 ---
 
 ## 💡 核心優勢 (Key Features)
@@ -26,8 +37,8 @@
   免架設伺服器！採用你個人的 Google Sheets 當作隱形資料庫，所有研究計畫與機密策略 100% 存在你個人的 Google Drive 中。
 * **滿版獨立網頁體驗**
   揮別擠在試算表側邊欄或小視窗的侷限，部署後擁有專屬的滿版網頁儀表板，給你的實驗設計應有的視覺尊重。
-* **極速非同步自動存檔**
-  像貼便利貼一樣，點擊網頁區塊直接打字。滑鼠游標移開立即觸發背景自動同步，不影響打字流暢度，更不怕資料遺失。
+* **極速非同步自動存檔與秒開體驗**
+* 採用全新升級的核心映射算法，網頁啟動時會精準過濾試算表中的空白區域，**即使資料庫尚未瘦身也能達到毫秒級的「秒開」加載速度。** 像貼便利貼一樣，在網頁區塊直接打字、滑鼠游標移開立即觸發背景精準定位同步，完全不影響打字流暢度，更不怕資料遺失。
 * **AI 擴充功能友善**
   網頁原生內容區塊 (`contenteditable`) 能完美銜接瀏覽器上的 AI 擴充功能（如 Claude、ChatGPT 等），直接喚出 AI 幫忙潤飾計畫，一起腦力激盪。
 * **完全自訂標題欄位**
@@ -43,7 +54,7 @@
 
 點擊下方連結，並點選 **「建立副本」**，將系統下載到你個人的 Google 雲端硬碟：
 
->  👉 [一鍵建立 Google Sheet 專屬範本副本](https://docs.google.com/spreadsheets/d/1xOC0zmpLPJvnkBsGuf_mCBbY91rk310ckK9fP85g7BY/copy)
+> 👉 [一鍵建立 Google Sheet 專屬範本副本](https://docs.google.com/spreadsheets/d/1xOC0zmpLPJvnkBsGuf_mCBbY91rk310ckK9fP85g7BY/copy)
 
 ### 步驟二：一鍵自動生成系統結構
 
@@ -66,9 +77,9 @@
 
 ---
 
-## 🛠️ 進階技巧：一鍵為資料庫瘦身加速
+## 🛠️ 進階技巧：一鍵進行資料庫防禦型瘦身
 
-為了讓滿版網頁的載入與即時自動存檔達到「秒開」等級，建議定期清除試算表中多餘的幽靈空白列：
+受惠於系統全新升級的「精準單點定位讀寫機制」，即使試算表底部帶有幾萬行幽靈空白列，網頁 Web App 依然能維持極速秒開的順暢體驗。但為了讓 Google Sheets 後端儲存格的記憶體利用率達到最完美的精簡狀態（極致強迫症友善），建議可在大量修改資料後進行一次防禦型瘦身：
 
 1. 打開你的試算表。
 2. 點選上方工具列的 **`🔬 科研畫布工具` > `🧹 2. 試算表自動瘦身`**。
