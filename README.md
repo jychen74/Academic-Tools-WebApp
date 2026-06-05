@@ -42,7 +42,8 @@
 ### 步驟一：一鍵複製母範本 (內建完成所有配置)
 
 1. 點擊下方連結，並點選 **「建立副本」**，將系統下載到你個人的 Google 雲端硬碟：
-   👉 [一鍵建立 Google Sheet 專屬範本副本](https://docs.google.com/spreadsheets/d/1xOC0zmpLPJvnkBsGuf_mCBbY91rk310ckK9fP85g7BY/copy)
+2. 
+3. 👉 [一鍵建立 Google Sheet 專屬範本副本](https://docs.google.com/spreadsheets/d/1xOC0zmpLPJvnkBsGuf_mCBbY91rk310ckK9fP85g7BY/copy)
 
 ### 步驟二：一鍵自動生成系統結構
 
